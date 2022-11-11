@@ -9,7 +9,7 @@ Add to your ~/.p10k.zsh inside of the `() {` section. Refer to `prompt_example` 
 
   function prompt_tsh_profile() {
     # p10k segment -b 1 -f 3 -i '⭐' -t 'hello, %n'
-    local tsh_profile=$(cat /tmp/tsh-current-profile-segment)
+    local tsh_profile=$(cat /tmp/tsh-current-profile)
     p10k segment -b 8 -t "🐚: ${tsh_profile}"
   }
 
@@ -20,10 +20,19 @@ Add to your ~/.p10k.zsh inside of the `() {` section. Refer to `prompt_example` 
 
 ```
 function tsh-get-current-profile-segment() {
-    tsh status | grep "> Profile" | awk '{print $4}' | awk -F '.' '{print $2}' > /tmp/tsh-current-profile-segment
+    tsh status | grep "> Profile" | awk '{print $4}' | awk -F '.' '{print $2}'
 }
 
-alias tsh-login='tsh login --proxy=teleport.example.com && tsh-get-current-profile-segment > /tmp/tsh-current-profile-segment'
+alias tsh-login='tsh login --proxy=teleport.example.com && tsh-get-current-profile-segment > /tmp/tsh-current-profile'
+```
+
+Alternative which displays the Cluster name rather than attempt to parse something meaningful from the URL. More reliable but possibly less future-proof if Teleport decides changes the command output.
+
+```
+function tsh-get-current-profile-cluster() {
+    tsh status | grep '> Profile' -A 2 | grep Cluster | awk '{print $2}'
+
+alias tsh-login='tsh login --proxy=teleport.example.com && tsh-get-current-profile-cluster > /tmp/tsh-current-profile'
 ```
 
 ### vault segment - @plinde
