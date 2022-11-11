@@ -4,6 +4,8 @@ Add to your ~/.p10k.zsh inside of the `() {` section. Refer to `prompt_example` 
 
 ### tsh_profile segment - @plinde
 
+<img width="479" alt="image" src="https://user-images.githubusercontent.com/3487168/201411106-0cb65547-d87a-4541-a239-75f581c061f2.png">
+
 ```
 ### tsh_profile segment - @plinde
 
@@ -37,6 +39,8 @@ alias tsh-login='tsh login --proxy=teleport.example.com && tsh-get-current-profi
 ```
 
 ### vault segment - @plinde
+
+<img width="543" alt="image" src="https://user-images.githubusercontent.com/3487168/201411203-a03b5011-26bd-40fc-a20a-bacdc71903fc.png">
 
 ```
 ### vault segment - @plinde
