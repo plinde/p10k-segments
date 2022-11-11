@@ -31,6 +31,7 @@ Alternative which displays the Cluster name rather than attempt to parse somethi
 ```
 function tsh-get-current-profile-cluster() {
     tsh status | grep '> Profile' -A 2 | grep Cluster | awk '{print $2}'
+    # e.g. Production, Staging, Dev
 
 alias tsh-login='tsh login --proxy=teleport.example.com && tsh-get-current-profile-cluster > /tmp/tsh-current-profile'
 ```
