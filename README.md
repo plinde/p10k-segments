@@ -45,7 +45,6 @@ alias tsh-login='tsh login --proxy=teleport.example.com && tsh-get-current-profi
 ### vault segment - @plinde
 
     function prompt_vault() {
-    # p10k segment -b 1 -f 3 -i '⭐' -t 'hello, %n'
     # local tsh_profile=$(cat /tmp/tsh-current-profile-segment)
     local vault=$(echo $VAULT_ADDR)
     p10k segment -b 8 -t "🔐: ${vault}"
