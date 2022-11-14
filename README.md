@@ -17,7 +17,7 @@ Add to your ~/.p10k.zsh inside of the `() {` section. Refer to `prompt_example` 
     typeset -g POWERLEVEL9K_TSH_PROFILE_SHOW_ON_COMMAND='tsh|tctl|tsu'
 ```
 
-(Optional) - Define your last Teleport profile login in a file so you don't need to run `tsh` repeatly. Ths is preferreable to an environment variable as it is isn't limited to your current shell. Use a shell alias to wrap your `tsh login` + `tsh-get-current-profile-segment`.
+(Optional) - Define your last Teleport profile login in a file so you don't need to run `tsh` repeatly. This is preferreable to an environment variable as it is isn't limited to your current shell. Use a shell alias to wrap your `tsh login` + `tsh-get-current-profile-segment`.
 
 ```
 function tsh-get-current-profile-segment() {
