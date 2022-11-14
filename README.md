@@ -10,7 +10,6 @@ Add to your ~/.p10k.zsh inside of the `() {` section. Refer to `prompt_example` 
 ### tsh_profile segment - @plinde
 
   function prompt_tsh_profile() {
-    # p10k segment -b 1 -f 3 -i '⭐' -t 'hello, %n'
     local tsh_profile=$(cat /tmp/tsh-current-profile)
     p10k segment -b 8 -t "🐚: ${tsh_profile}"
   }
